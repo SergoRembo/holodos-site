@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ремонт холодильников в Москве. Бесплатный выезд, диагностика бесплатно при ремонте. Работаем ежедневно с 8:00 до 22:00. Цены от 600 рублей.">
+  <title>Ремонт Холодос — ремонт холодильников в Москве</title>
+
+  <style>
+    :root {
+      --blue: #1769e0;
+      --blue-dark: #1055bd;
+      --dark: #15243a;
+      --muted: #65748a;
+      --light: #f3f7fc;
+      --green: #08764d;
+      --border: #e5ebf3;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--dark);
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 15px 0;
+      background: rgba(255, 255, 255, .96);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .logo span { color: var(--blue); }
+
+    .header-contact {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .phone {
+      color: var(--blue);
+      font-size: 19px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .small-link {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .hero {
+      padding: 76px 0;
+      background:
+        radial-gradient(circle at 85% 25%, #dceaff 0, transparent 28%),
+        linear-gradient(120deg, #f4f8ff, #fff);
+    }
+
+    .hero-content { max-width: 720px; }
+
+    .label {
+      display: inline-block;
+      padding: 7px 13px;
+      border-radius: 30px;
+      background: #e4f7ef;
+      color: var(--green);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 20px 0 14px;
+      font-size: clamp(36px, 6vw, 58px);
+      line-height: 1.08;
+      letter-spacing: -1.5px;
+    }
+
+    .hero p {
+      max-width: 640px;
+      color: var(--muted);
+      font-size: 19px;
+    }
+
+    .price {
+      margin: 22px 0;
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .price strong { color: var(--blue); }
+
+    .button {
+      display: inline-block;
+      padding: 14px 22px;
+      border: 0;
+      border-radius: 10px;
+      background: var(--blue);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .2s, transform .2s;
+    }
+
+    .button:hover {
+      background: var(--blue-dark);
+      transform: translateY(-1px);
+    }
+
+    .button-green { background: #128c54; }
+    .button-green:hover { background: #087344; }
+
+    .button-dark { background: #26364e; }
+    .button-dark:hover { background: #172438; }
+
+    .note {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    section { padding: 62px 0; }
+
+    h2 {
+      margin: 0 0 28px;
+      font-size: clamp(28px, 4vw, 38px);
+      line-height: 1.2;
+    }
+
+    .section-intro {
+      max-width: 720px;
+      margin: -14px 0 26px;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      padding: 23px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #fff;
+    }
+
+    .card h3 { margin: 0 0 8px; }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .soft { background: var(--light); }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .photo-card {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #fff;
+    }
+
+    .photo-card img {
+      display: block;
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      background: #eaf1fa;
+    }
+
+    .photo-card div { padding: 15px 18px; }
+
+    .photo-card h3 { margin: 0 0 4px; }
+
+    .photo-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .brands {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .brand {
+      padding: 10px 16px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      background: #fff;
+      font-weight: 700;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .step-number {
+      display: inline-grid;
+      width: 38px;
+      height: 38px;
+      margin-bottom: 12px;
+      place-items: center;
+      border-radius: 50%;
+      background: #e5efff;
+      color: var(--blue);
+      font-weight: 800;
+    }
+
+    .review {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .stars {
+      color: #e3a008;
+      letter-spacing: 2px;
+    }
+
+    .review p {
+      color: var(--dark);
+      font-style: italic;
+    }
+
+    .review-author {
+      margin-top: auto;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .form-wrap {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .form-info p { color: var(--muted); }
+
+    form {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #fff;
+    }
+
+    label {
+      display: block;
+      margin: 0 0 6px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    input, textarea {
+      width: 100%;
+      margin-bottom: 16px;
+      padding: 12px 13px;
+      border: 1px solid #cfd8e5;
+      border-radius: 8px;
+      font: inherit;
+    }
+
+    input:focus, textarea:focus {
+      outline: 2px solid #b8d3ff;
+      border-color: var(--blue);
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .form-disclaimer {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .cta {
+      padding: 38px;
+      border-radius: 18px;
+      background: #edf4ff;
+      text-align: center;
+    }
+
+    .cta p { color: var(--muted); }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    footer {
+      padding: 24px 0;
+      background: #15243a;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 760px) {
+      .header-row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .header-contact {
+        justify-content: flex-start;
+      }
+
+      .hero { padding: 52px 0; }
+
+      .grid, .steps, .photo-grid, .form-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-card img { height: 230px; }
+
+      .cta { padding: 28px 18px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container header-row">
+      <a class="logo" href="#">Ремонт <span>Холодос</span></a>
+
+      <div class="header-contact">
+        <span class="small-link">Ежедневно: 8:00–22:00</span>
+        <a class="phone" href="tel:+79055454152">8 (905) 545-41-52</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        <span class="label">Москва · Выезд мастера бесплатный</span>
+        <h1>Ремонт холодильников на дому</h1>
+        <p>
+          Работаем больше 10 лет. Помогаем при поломках холодильников разных
+          марок. Сначала объясняем причину неисправности и согласуем стоимость.
+        </p>
+        <div class="price">Цены на ремонт — <strong>от 600 ₽</strong></div>
+        <a class="button" href="tel:+79055454152">Вызвать мастера</a>
+        <span class="note">
+          Диагностика бесплатна при выполнении ремонта. Работаем ежедневно с 8:00 до 22:00.
+        </span>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Ремонтируем холодильники</h2>
+        <p class="section-intro">
+          Выезжаем по Москве. Обслуживаем бытовые холодильники и морозильники.
+          Бесплатность выезда и диагностики действует на указанных условиях.
+        </p>
+
+        <div class="photo-grid">
+          <article class="photo-card">
+            <img
+              src="https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?auto=format&fit=crop&w=900&q=80"
+              alt="Современный холодильник на кухне"
+              loading="lazy">
+            <div>
+              <h3>Ремонт на дому</h3>
+              <p>Мастер приезжает к вам в удобное время.</p>
+            </div>
+          </article>
+
+          <article class="photo-card">
+            <img
+              src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?auto=format&fit=crop&w=900&q=80"
+              alt="Холодильник в интерьере кухни"
+              loading="lazy">
+            <div>
+              <h3>Разные модели</h3>
+              <p>Помогаем с холодильниками разных типов и конструкций.</p>
+            </div>
+          </article>
+
+          <article class="photo-card">
+            <img
+              src="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?auto=format&fit=crop&w=900&q=80"
+              alt="Техника и инструменты для ремонта"
+              loading="lazy">
+            <div>
+              <h3>Проверка неисправности</h3>
+              <p>Обсуждаем причину и стоимость до начала работ.</p>
+            </div>
+          </article>
+        </div>
+        <span class="note">Фотографии загружаются из интернета; для их отображения устройству нужен доступ к сети.</span>
+      </div>
+    </section>
+
+    <section class="soft">
+      <div class="container">
+        <h2>Марки холодильников</h2>
+        <p class="section-intro">
+          Работаем с распространёнными марками. Уточните при звонке марку и модель вашего холодильника.
+        </p>
+        <div class="brands" aria-label="Марки холодильников">
+          <span class="brand">Samsung</span>
+          <span class="brand">LG</span>
+          <span class="brand">Bosch</span>
+          <span class="brand">Indesit</span>
+          <span class="brand">ATLANT</span>
+          <span class="brand">Haier</span>
+          <span class="brand">Beko</span>
+          <span class="brand">Liebherr</span>
+          <span class="brand">Бирюса</span>
+          <span class="brand">Stinol</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Почему обращаются к нам</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Больше 10 лет опыта</h3>
+            <p>Занимаемся ремонтом холодильников более десяти лет.</p>
+          </article>
+          <article class="card">
+            <h3>Тысячи довольных клиентов</h3>
+            <p>Нам доверяли ремонт холодильников жители Москвы.</p>
+          </article>
+          <article class="card">
+            <h3>Согласование цены</h3>
+            <p>Обсуждаем стоимость и необходимые работы до начала ремонта.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft">
+      <div class="container">
+        <h2>Как вызвать мастера</h2>
+        <div class="steps">
+          <div>
+            <span class="step-number">1</span>
+            <h3>Оставьте обращение</h3>
+            <p>Позвоните или заполните форму на сайте.</p>
+          </div>
+          <div>
+            <span class="step-number">2</span>
+            <h3>Согласуйте время</h3>
+            <p>Работаем ежедневно с 8:00 до 22:00.</p>
+          </div>
+          <div>
+            <span class="step-number">3</span>
+            <h3>Согласуйте ремонт</h3>
+            <p>Мастер сообщит причину неисправности и стоимость работ.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="container">
+        <h2>Отзывы клиентов</h2>
+        <p class="section-intro">
+          Примеры текста для оформления раздела. Перед публикацией замените их на реальные отзывы клиентов.
+        </p>
+
+        <div class="grid">
+          <article class="card review">
+            <div class="stars" aria-label="5 из 5 звёзд">★★★★★</div>
+            <p>«Мастер приехал в оговорённое время, объяснил, в чём проблема, и заранее назвал стоимость. Спасибо!»</p>
+            <span class="review-author">Анна, Москва</span>
+          </article>
+
+          <article class="card review">
+            <div class="stars" aria-label="5 из 5 звёзд">★★★★★</div>
+            <p>«Холодильник снова работает. Удобно, что можно было договориться на вечернее время.»</p>
+            <span class="review-author">Сергей, Москва</span>
+          </article>
+
+          <article class="card review">
+            <div class="stars" aria-label="5 из 5 звёзд">★★★★★</div>
+            <p>«Понятно объяснили условия и согласовали ремонт до начала работ.»</p>
+            <span class="review-author">Мария, Москва</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft" id="request">
+      <div class="container form-wrap">
+        <div class="form-info">
+          <h2>Оставить обращение</h2>
+          <p>
+            Заполните форму — откроется ваше почтовое приложение с подготовленным письмом
+            на <strong>seriy94@icloud.com</strong>. Перед отправкой проверьте текст и нажмите «Отправить».
+          </p>
+          <p><strong>Телефон:</strong> <a href="tel:+79055454152">8 (905) 545-41-52</a></p>
+          <p><strong>График:</strong> ежедневно с 8:00 до 22:00</p>
+        </div>
+
+        <form action="mailto:seriy94@icloud.com" method="post" enctype="text/plain">
+          <label for="name">Ваше имя</label>
+          <input id="name" name="Имя" type="text" placeholder="Как к вам обращаться" required>
+
+          <label for="phone">Телефон для связи</label>
+          <input id="phone" name="Телефон" type="tel" placeholder="+7 ___ ___-__-__" required>
+
+          <label for="message">Что случилось с холодильником?</label>
+          <textarea id="message" name="Сообщение" placeholder="Например: холодильник не охлаждает"></textarea>
+
+          <button class="button" type="submit">Подготовить обращение</button>
+          <p class="form-disclaimer">
+            Форма использует почтовое приложение на вашем устройстве и не отправляет письмо автоматически.
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta">
+          <h2>Нужен ремонт холодильника?</h2>
+          <p>Позвоните или напишите — обсудим неисправность и договоримся о выезде.</p>
+
+          <div class="contact-buttons">
+            <a class="button" href="tel:+79055454152">Позвонить</a>
+            <a class="button button-green"
+               href="https://wa.me/79055454152"
+               target="_blank"
+               rel="noopener noreferrer">WhatsApp</a>
+            <a class="button button-dark"
+               href="https://t.me/+79055454152"
+               target="_blank"
+               rel="noopener noreferrer">Telegram</a>
+            <a class="button"
+               href="mailto:seriy94@icloud.com">Написать на почту</a>
+          </div>
+
+          <span class="note">
+            Москва · Ежедневно с 8:00 до 22:00 · Выезд бесплатный · Цены от 600 ₽
+          </span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span>© Ремонт Холодос</span>
+      <span>Ремонт холодильников в Москве · Ежедневно 8:00–22:00</span>
+    </div>
+  </footer>
+</body>
+</html>
